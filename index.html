@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Académico | Portafolio Universitario</title>
+    <meta name="description"
+        content="Dossier de desempeño académico universitario. Proyectos semanales presentados con estilo profesional y futurista.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Animated Blobs -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">DOSSIER<span>.CIENTIFICA.PE</span></div>
+            <div class="nav-links">
+                <a href="#home" class="active">Inicio</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#about">Sobre Nosotros</a>
+            </div>
+            <div class="status-badge">
+                <span class="dot"></span> Semestre 2026-1
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge reveal-up">
+                    <i class="fa-solid fa-graduation-cap"></i> Cientifica del Sur Sede Norte
+                </div>
+                <h2 class="reveal-up delay-1">DOSSIER DE DESEMPEÑO</h2>
+                <h1 class="glitch-text reveal-up delay-2" data-text="ACADÉMICO">ACADÉMICO</h1>
+                <p class="subtitle reveal-up delay-3">Una recopilación de los projectos realizados durante las 4
+                    semanas,
+                    análisis visuales y producciones multimedia desarrolladas durante el ciclo universitario.</p>
+                <div class="hero-stats reveal-up delay-4">
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label">Semanas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Dedicación</span>
+                    </div>
+                </div>
+                <div class="hero-btns reveal-up delay-5">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explorar Trabajos</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Desliza</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-stacked">
+            <div class="section-header reveal-up">
+                <span class="tag"><i class="fa-solid fa-folder-open"></i> Descubrimientos semanales</span>
+                <h2>Explora nuestros Trabajos</h2>
+                <p class="section-subtitle">Cada semana representa un reto diferente. Pasa el cursor para descubrir más.
+                </p>
+            </div>
+
+            <div class="stacked-container">
+                <!-- Dossier General -->
+                <div class="large-rect-card dossier-card reveal-item" data-delay="0" onclick="openModal('proj0')">
+                    <div class="rect-number">★</div>
+                    <div class="rect-bg">
+                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2070&auto=format&fit=crop"
+                            alt="Dossier">
+                        <div class="rect-overlay"></div>
+                    </div>
+                    <div class="rect-content">
+                        <div class="week-label dossier-label"><i class="fa-solid fa-star"></i> Trabajo Completo</div>
+                        <h3>Dossier General</h3>
+                        <p class="rect-category"><i class="fa-solid fa-book-open"></i> Portafolio Completo</p>
+                        <p class="rect-desc">Recopilación integral de todos los proyectos y evidencias del ciclo
+                            universitario.</p>
+                    </div>
+                    <div class="hover-indicator dossier-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="card-glow dossier-glow"></div>
+                </div>
+
+                <!-- Semana 1 -->
+                <div class="large-rect-card reveal-item" data-delay="0" onclick="openModal('proj1')">
+                    <div class="rect-number">01</div>
+                    <div class="rect-bg">
+                        <img src="https://images.unsplash.com/photo-1523240715639-6924a3e2858a?q=80&w=2070&auto=format&fit=crop"
+                            alt="Identidad">
+                        <div class="rect-overlay"></div>
+                    </div>
+                    <div class="rect-content">
+                        <div class="week-label"><i class="fa-regular fa-calendar"></i> Semana 01</div>
+                        <h3>Identidad Universitaria y Liderazgo Académico</h3>
+                        <p class="rect-category"><i class="fa-solid fa-file-pdf"></i> Documento PDF</p>
+                        <p class="rect-desc">Exploración de la esencia universitaria y el rol del liderazgo en la
+                            formación académica.</p>
+                    </div>
+                    <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Semana 2 -->
+                <div class="large-rect-card reveal-item" data-delay="150" onclick="openModal('proj2')">
+                    <div class="rect-number">02</div>
+                    <div class="rect-bg">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Equipo">
+                        <div class="rect-overlay"></div>
+                    </div>
+                    <div class="rect-content">
+                        <div class="week-label"><i class="fa-regular fa-calendar"></i> Semana 02</div>
+                        <h3>Liderazgo Académico y Trabajo en Equipo</h3>
+                        <p class="rect-category"><i class="fa-solid fa-file-pdf"></i> Documento PDF</p>
+                        <p class="rect-desc">Enfoque en la colaboración estratégica en el contexto universitario.</p>
+                    </div>
+                    <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Semana 3 -->
+                <div class="large-rect-card reveal-item" data-delay="300" onclick="openModal('proj3')">
+                    <div class="rect-number">03</div>
+                    <div class="rect-bg">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1973&auto=format&fit=crop"
+                            alt="Técnicas">
+                        <div class="rect-overlay"></div>
+                    </div>
+                    <div class="rect-content">
+                        <div class="week-label"><i class="fa-regular fa-calendar"></i> Semana 03</div>
+                        <h3>Mejora de las Técnicas de Estudio</h3>
+                        <p class="rect-category"><i class="fa-solid fa-video"></i> Producción Video</p>
+                        <p class="rect-desc">Estrategias efectivas para optimizar el aprendizaje y la retención de
+                            información.</p>
+                    </div>
+                    <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Semana 4 -->
+                <div class="large-rect-card reveal-item" data-delay="450" onclick="openModal('proj4')">
+                    <div class="rect-number">04</div>
+                    <div class="rect-bg">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
+                            alt="Hábitos">
+                        <div class="rect-overlay"></div>
+                    </div>
+                    <div class="rect-content">
+                        <div class="week-label"><i class="fa-regular fa-calendar"></i> Semana 04</div>
+                        <h3>Fortalecimiento de Hábitos de Estudio</h3>
+                        <p class="rect-category"><i class="fa-solid fa-video"></i> Producción Video</p>
+                        <p class="rect-desc">Estableciendo rutinas de alto rendimiento para el éxito académico
+                            sostenible.</p>
+                    </div>
+                    <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <div class="section-header reveal-up">
+                <span class="tag"><i class="fa-solid fa-users"></i> Formación Académica</span>
+                <h2>EL GRUPO NÚMERO 1</h2>
+                <p class="section-subtitle">Integrantes del Equipo.</p>
+            </div>
+
+            <div class="team-container">
+                <div class="team-grid reveal-up">
+                    <!-- Integrante 1 -->
+                    <div class="member-card" data-member="m1">
+                        <div class="member-avatar">
+                            <img src="assets/Parravecino Suarez Yessica Alexia.jpeg" alt="Yessica">
+                        </div>
+                        <div class="member-short">
+                            <h4>Parravecino Suarez</h4>
+                            <span>Yessica Alexia</span>
+                        </div>
+                    </div>
+
+                    <!-- Integrante 2 -->
+                    <div class="member-card" data-member="m2">
+                        <div class="member-avatar">
+                            <img src="assets/Julian Enriquez Leyra Verenitse.jpg" alt="Verenitse">
+                        </div>
+                        <div class="member-short">
+                            <h4>Julian Enriquez</h4>
+                            <span>Leyra Verenitse</span>
+                        </div>
+                    </div>
+
+                    <!-- Integrante 3 -->
+                    <div class="member-card" data-member="m3">
+                        <div class="member-avatar">
+                            <img src="assets/Mata Quispe Francis Nicoll.jpg" alt="Francis">
+                        </div>
+                        <div class="member-short">
+                            <h4>Mata Quispe</h4>
+                            <span>Francis Nicoll</span>
+                        </div>
+                    </div>
+
+                    <!-- Integrante 4 -->
+                    <div class="member-card" data-member="m4">
+                        <div class="member-avatar">
+                            <img src="assets/Mercado Quispe Grecia Giuliana.jpg" alt="Grecia">
+                        </div>
+                        <div class="member-short">
+                            <h4>Mercado Quispe</h4>
+                            <span>Grecia Giuliana</span>
+                        </div>
+                    </div>
+
+                    <!-- Integrante 5 -->
+                    <div class="member-card" data-member="m5">
+                        <div class="member-avatar">
+                            <img src="assets/Mendivel Navarro Enmanuel de Jesus.jpg" alt="Enmanuel">
+                        </div>
+                        <div class="member-short">
+                            <h4>Mendivel Navarro</h4>
+                            <span>Enmanuel de Jesus</span>
+                        </div>
+                    </div>
+
+                    <!-- Integrante 6 -->
+                    <div class="member-card" data-member="m6">
+                        <div class="member-avatar">
+                            <img src="assets/Andrade la Madrid Ariana Samar.jpg" alt="Ariana">
+                        </div>
+                        <div class="member-short">
+                            <h4>Andrade la Madrid</h4>
+                            <span>Ariana Samar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Panel (Right Side) -->
+                <div class="team-info-panel reveal-up" id="team-info-panel">
+                    <div class="info-placeholder">
+                        <i class="fa-solid fa-id-card"></i>
+                        <p>Pasa el cursor sobre un integrante para ver su información.</p>
+                    </div>
+                    <div class="info-active-content" id="team-content" style="display: none;">
+                        <h3 id="m-name">Nombre</h3>
+                        <p id="m-role">Rol Académico</p>
+                        <div class="info-divider"></div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-star"></i>
+                            <div>
+                                <strong>Cualidades</strong>
+                                <p id="m-qualities">Cargando...</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Contacto</strong>
+                                <p id="m-email">correo@ejemplo.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container reveal-up">
+                <div class="about-text">
+                    <span class="tag"><i class="fa-solid fa-user"></i> Sobre los Autores</span>
+                    <h2>EL GRUPO NUMERO 1 </h2>
+                    <p>Este dossier refleja nuestro compromiso con la excelencia académica y la innovación usando la
+                        tecnologia y adaptandola para una eficiencia mayor. Cada proyecto fue
+                        desarrollado con pasión, creatividad y un enfoque en la calidad de nuestro futuro profesional.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-badge"><i class="fa-brands fa-canva"></i> Canva</span>
+                        <span class="tech-badge"><i class="fa-solid fa-film"></i> Video</span>
+                        <span class="tech-badge"><i class="fa-solid fa-chart-bar"></i> Datos</span>
+                        <span class="tech-badge"><i class="fa-solid fa-pen-nib"></i> Diseño</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="floating-card fc-1">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Alta eficiencia</span>
+                    </div>
+                    <div class="floating-card fc-2">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Innovación</span>
+                    </div>
+                    <div class="floating-card fc-3">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Creatividad</span>
+                    </div>
+                    <div class="orbit-ring"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Dossier Académico Universitario</p>
+            <p class="footer-sub">Diseñado con <i class="fa-solid fa-heart" style="color: #ff4081;"></i> y tecnología
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
