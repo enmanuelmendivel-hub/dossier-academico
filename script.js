@@ -201,23 +201,23 @@ const projectsData = {
         `
     },
     proj4: {
-        category: 'Producción Video',
+        category: 'Presentación Interactiva',
         fullTitle: 'Fortalecimiento de Hábitos de Estudio',
-        content: `
-            <div class="pdf-viewer-wrapper">
-                <div class="pdf-toolbar">
-                    <div class="pdf-toolbar-left">
-                        <i class="fa-solid fa-video" style="color:var(--accent-primary)"></i>
-                        <span>Semana 04 — Hábitos de Estudio</span>
-                    </div>
-                </div>
-                <video controls class="video-player">
-                    <source src="assets/semana4.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Guía visual sobre cómo establecer rutinas diarias de alto rendimiento académico.</p>
-            </div>
-        `
+        isSlideshow: true,
+        slides: [
+            { type: 'image', src: 'assets/semana4/1.png' },
+            { type: 'video', src: 'assets/semana4/2.mp4' },
+            { type: 'video', src: 'assets/semana4/3.mp4' },
+            { type: 'video', src: 'assets/semana4/4.mp4' },
+            { type: 'image', src: 'assets/semana4/5.png' },
+            { type: 'image', src: 'assets/semana4/6.png' },
+            { type: 'image', src: 'assets/semana4/7.png' },
+            { type: 'video', src: 'assets/semana4/8.mp4' },
+            { type: 'image', src: 'assets/semana4/9.png' },
+            { type: 'image', src: 'assets/semana4/10.png' },
+            { type: 'image', src: 'assets/semana4/11.png' }
+        ],
+        note: 'Guía interactiva sobre hábitos de alto rendimiento académico. Usa las flechas para navegar.'
     }
 };
 
@@ -226,15 +226,64 @@ const modal = document.getElementById('projectModal');
 const modalBody = document.getElementById('modalBody');
 const closeBtn = document.querySelector('.close-modal');
 
+let currentSlideIndex = 0;
+
 window.openModal = function(id) {
     const data = projectsData[id];
-    modalBody.innerHTML = `
-        <span class="modal-tag">${data.category}</span>
-        <h2 class="modal-title">${data.fullTitle}</h2>
-        ${data.content}
-    `;
+    
+    if (data.isSlideshow) {
+        currentSlideIndex = 0;
+        const slidesHtml = data.slides.map((slide, index) => `
+            <div class="slide">
+                ${slide.type === 'image' 
+                    ? `<img src="${slide.src}" alt="Slide ${index + 1}">` 
+                    : `<video controls class="video-player"><source src="${slide.src}" type="video/mp4"></video>`}
+            </div>
+        `).join('');
+
+        modalBody.innerHTML = `
+            <span class="modal-tag">${data.category}</span>
+            <h2 class="modal-title">${data.fullTitle}</h2>
+            <div class="slider-container">
+                <div class="slides-wrapper" id="slidesWrapper">
+                    ${slidesHtml}
+                </div>
+                
+                <!-- Floating Nav Buttons -->
+                <button class="slider-nav-btn prev-btn" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-nav-btn next-btn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Subtle Counter -->
+                <div class="slider-counter-subtle">
+                    <span id="currentSlideNum">1</span> / ${data.slides.length}
+                </div>
+            </div>
+            <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> ${data.note}</p>
+        `;
+    } else {
+        modalBody.innerHTML = `
+            <span class="modal-tag">${data.category}</span>
+            <h2 class="modal-title">${data.fullTitle}</h2>
+            ${data.content}
+        `;
+    }
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+};
+
+window.changeSlide = function(direction) {
+    const wrapper = document.getElementById('slidesWrapper');
+    const totalSlides = wrapper.children.length;
+    
+    // Pause any playing videos in the current slide
+    const currentSlide = wrapper.children[currentSlideIndex];
+    const video = currentSlide.querySelector('video');
+    if (video) video.pause();
+
+    currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+    
+    wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    document.getElementById('currentSlideNum').textContent = currentSlideIndex + 1;
 };
 
 // Stop videos/reset content on close
@@ -250,9 +299,13 @@ window.addEventListener('click', (event) => {
     if (event.target === modal) closeModal();
 });
 
-// Close with Escape
+// Close with Escape and handle Arrow keys for slider
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+    if (modal.style.display === 'block') {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight') changeSlide(1);
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+    }
 });
 
 // ===== SCROLL SPY =====
@@ -351,7 +404,7 @@ const teamData = {
         name: 'Julian Enriquez Leyra Verenitse',
         role: 'Mi rol es seguir mejorando, aprender cada día más y esforzarme por cumplir mis metas académicas con responsabilidad y dedicación.',
         qualities: '💪 Perseverante  •  💞 Empática',
-        email: 'pendiente'
+        email: '100227565@cientifica.edu.pe'
     },
     m3: {
         name: 'Mata Quispe Francis Nicoll',
@@ -363,19 +416,19 @@ const teamData = {
         name: 'Mercado Quispe Grecia Giuliana',
         role: 'Mi papel es aprender, crecer y cumplir con mis responsabilidades.',
         qualities: '✅ Responsable  •  🤝 Comprometida',
-        email: 'pendiente'
+        email: '100227579@cientifica.edu.pe'
     },
     m5: {
         name: 'Mendivel Navarro Enmanuel de Jesus',
         role: 'Mi rol es aprender, entender y cuestionar.',
         qualities: '🤲 Solidario  •  💞 Empático',
-        email: 'pendiente'
+        email: '100228550@cientifica.edu.pe'
     },
     m6: {
         name: 'Andrade la Madrid Ariana Samar',
         role: 'Mi rol es aprender de manera constante, desarrollar mis habilidades y asumir con responsabilidad mis estudios.',
         qualities: '⏰ Puntual  •  💞 Empática',
-        email: 'pendiente'
+        email: '100225946@cientifica.edu.pe'
     }
 };
 
@@ -397,7 +450,7 @@ memberCards.forEach(card => {
             mName.textContent = data.name;
             mRole.textContent = data.role;
             mQualities.textContent = data.qualities;
-            mEmail.textContent = data.email;
+            mEmail.innerHTML = `<a href="mailto:${data.email}" style="color: var(--accent-primary); text-decoration: none; transition: 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">${data.email}</a>`;
 
             // Toggle visibility
             if(infoPlaceholder) infoPlaceholder.style.display = 'none';
