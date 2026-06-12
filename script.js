@@ -218,6 +218,159 @@ const projectsData = {
             { type: 'image', src: 'assets/semana4/11.png' }
         ],
         note: 'Guía interactiva sobre hábitos de alto rendimiento académico. Usa las flechas para navegar.'
+    },
+    proj5: {
+        category: 'Documento PDF',
+        fullTitle: 'Semana 05: Desarrollo del Pensamiento Crítico',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-file-pdf" style="color:var(--accent-primary)"></i>
+                        <span>Semana 05 — Pensamiento Crítico</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana5.pdf" download class="pdf-btn"><i class="fa-solid fa-download"></i> Descargar</a>
+                        <a href="assets/semana5.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Abrir</a>
+                    </div>
+                </div>
+                <div class="pdf-frame-wrapper">
+                    <iframe src="assets/semana5.pdf#toolbar=0&navpanes=0" class="pdf-frame"></iframe>
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Evidencias y análisis correspondientes a la semana 5.</p>
+            </div>
+        `
+    },
+    proj6: {
+        category: 'Documento PDF / Presentación',
+        fullTitle: 'Estrategias efectivas en la exposición académica',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-file-pdf" style="color:var(--accent-primary)"></i>
+                        <span>Semana 06 — Estrategias de Exposición</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana6.pdf" download class="pdf-btn"><i class="fa-solid fa-download"></i> Descargar</a>
+                        <a href="assets/semana6.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Abrir</a>
+                    </div>
+                </div>
+                <div class="pdf-frame-wrapper">
+                    <iframe src="assets/semana6.pdf#toolbar=0&navpanes=0" class="pdf-frame"></iframe>
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Presentación de estrategias efectivas para la comunicación y exposición oral académica.</p>
+            </div>
+        `
+    },
+    proj7: {
+        category: 'Mapa / Imagen',
+        fullTitle: 'Mapa de autorregulación emocional',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-image" style="color:var(--accent-primary)"></i>
+                        <span>Semana 07 — Mapa de Autorregulación</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana7.png" download class="pdf-btn"><i class="fa-solid fa-download"></i> Guardar Imagen</a>
+                        <a href="assets/semana7.png" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Ampliar</a>
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                    <img src="assets/semana7.png" alt="Mapa de autorregulación emocional" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Esquema visual de las estrategias para la identificación y manejo de emociones.</p>
+            </div>
+        `
+    },
+    proj8: {
+        category: 'Documento PDF',
+        fullTitle: 'Semana 08: Redacción y Argumentación Científica',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-file-pdf" style="color:var(--accent-primary)"></i>
+                        <span>Semana 08 — Redacción Científica</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana8.pdf" download class="pdf-btn"><i class="fa-solid fa-download"></i> Descargar</a>
+                        <a href="assets/semana8.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Abrir</a>
+                    </div>
+                </div>
+                <div class="pdf-frame-wrapper">
+                    <iframe src="assets/semana8.pdf#toolbar=0&navpanes=0" class="pdf-frame"></iframe>
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Evidencias y análisis correspondientes a la semana 8.</p>
+            </div>
+        `
+    },
+    proj9: {
+        category: 'Ficha Visual / Imagen',
+        fullTitle: 'Objetivos de desarrollo sostenible aplicados al bien común',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-image" style="color:var(--accent-primary)"></i>
+                        <span>Semana 09 — Ficha Visual ODS</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana9.png" download class="pdf-btn"><i class="fa-solid fa-download"></i> Guardar Imagen</a>
+                        <a href="assets/semana9.png" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Ampliar</a>
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                    <img src="assets/semana9.png" alt="Ficha Visual ODS" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Ficha visual sobre la implementación de los ODS en el entorno comunitario local.</p>
+            </div>
+        `
+    },
+    proj10: {
+        category: 'Infografía / Imagen',
+        fullTitle: 'El voluntariado académico como estrategia de compromiso social',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-image" style="color:var(--accent-primary)"></i>
+                        <span>Semana 10 — Voluntariado Académico</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="assets/semana10.png" download class="pdf-btn"><i class="fa-solid fa-download"></i> Guardar Imagen</a>
+                        <a href="assets/semana10.png" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Ampliar</a>
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                    <img src="assets/semana10.png" alt="Voluntariado académico como estrategia de compromiso social" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Infografía detallando el rol y los beneficios del voluntariado como responsabilidad social universitaria.</p>
+            </div>
+        `
+    },
+    proj11: {
+        category: 'Presentación Video / YouTube',
+        fullTitle: 'Elaboración de la Charla TED',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-brands fa-youtube" style="color:#ff0000"></i>
+                        <span>Semana 11 — Charla TED (Video)</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <a href="https://www.youtube.com/watch?v=PuElVRLm_w0" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Ver en YouTube</a>
+                    </div>
+                </div>
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                    <iframe src="https://www.youtube.com/embed/PuElVRLm_w0?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Charla de estilo TED del grupo exponiendo los aprendizajes y desarrollo durante el curso. Reemplaza "TU_VIDEO_ID" en el script.js con el ID de tu video en YouTube.</p>
+            </div>
+        `
     }
 };
 
@@ -228,16 +381,16 @@ const closeBtn = document.querySelector('.close-modal');
 
 let currentSlideIndex = 0;
 
-window.openModal = function(id) {
+window.openModal = function (id) {
     const data = projectsData[id];
-    
+
     if (data.isSlideshow) {
         currentSlideIndex = 0;
         const slidesHtml = data.slides.map((slide, index) => `
             <div class="slide">
-                ${slide.type === 'image' 
-                    ? `<img src="${slide.src}" alt="Slide ${index + 1}">` 
-                    : `<video controls class="video-player"><source src="${slide.src}" type="video/mp4"></video>`}
+                ${slide.type === 'image'
+                ? `<img src="${slide.src}" alt="Slide ${index + 1}">`
+                : `<video controls class="video-player"><source src="${slide.src}" type="video/mp4"></video>`}
             </div>
         `).join('');
 
@@ -271,17 +424,17 @@ window.openModal = function(id) {
     document.body.style.overflow = 'hidden';
 };
 
-window.changeSlide = function(direction) {
+window.changeSlide = function (direction) {
     const wrapper = document.getElementById('slidesWrapper');
     const totalSlides = wrapper.children.length;
-    
+
     // Pause any playing videos in the current slide
     const currentSlide = wrapper.children[currentSlideIndex];
     const video = currentSlide.querySelector('video');
     if (video) video.pause();
 
     currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
-    
+
     wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
     document.getElementById('currentSlideNum').textContent = currentSlideIndex + 1;
 };
@@ -453,8 +606,8 @@ memberCards.forEach(card => {
             mEmail.innerHTML = `<a href="mailto:${data.email}" style="color: var(--accent-primary); text-decoration: none; transition: 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">${data.email}</a>`;
 
             // Toggle visibility
-            if(infoPlaceholder) infoPlaceholder.style.display = 'none';
-            if(infoActiveContent) infoActiveContent.style.display = 'block';
+            if (infoPlaceholder) infoPlaceholder.style.display = 'none';
+            if (infoActiveContent) infoActiveContent.style.display = 'block';
         }
     });
 });
