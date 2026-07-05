@@ -371,6 +371,58 @@ const projectsData = {
                 <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Charla de estilo TED del grupo exponiendo los aprendizajes y desarrollo durante el curso. Reemplaza "TU_VIDEO_ID" en el script.js con el ID de tu video en YouTube.</p>
             </div>
         `
+    },
+    proj13: {
+        category: 'Elevator Pitch / Interactiva',
+        fullTitle: 'Emprendimiento e Innovación Personal y Académico',
+        content: `
+            <div class="pitch-modal-wrapper">
+                <p class="pitch-intro">Cada miembro del grupo ha elaborado un Elevator Pitch destacando sus fortalezas, metas y propuestas de valor académicas y profesionales. Selecciona un integrante para ver su presentación:</p>
+                <div class="pitch-tabs-container">
+                    <button class="pitch-tab-btn active" onclick="window.switchPitch('m2', this)"><i class="fa-solid fa-user"></i> Verenitse</button>
+                    <button class="pitch-tab-btn" onclick="window.switchPitch('m3', this)"><i class="fa-solid fa-user"></i> Francis</button>
+                    <button class="pitch-tab-btn" onclick="window.switchPitch('m4', this)"><i class="fa-solid fa-user"></i> Grecia</button>
+                    <button class="pitch-tab-btn" onclick="window.switchPitch('m5', this)"><i class="fa-solid fa-user"></i> Enmanuel</button>
+                    <button class="pitch-tab-btn" onclick="window.switchPitch('m6', this)"><i class="fa-solid fa-user"></i> Ariana</button>
+                </div>
+                <div class="pitch-display" id="activePitchDisplay">
+                    <div class="pitch-media-container">
+                        <iframe src="https://www.youtube.com/embed/g2GlIyOyuSA" style="width: 100%; height: 100%; border: none; aspect-ratio: 16/9; display: block;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="pitch-details">
+                        <h3 class="pitch-member-name">Julian Enriquez Leyra Verenitse</h3>
+                        <p class="pitch-member-role">"Mi rol es seguir mejorando, aprender cada día más y esforzarme por cumplir mis metas académicas con responsabilidad y dedicación."</p>
+                        <div class="pitch-meta">
+                            <span><strong>Cualidades:</strong> 💪 Perseverante  •  💞 Empática</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    },
+    proj14: {
+        category: 'Línea de Tiempo Interactiva',
+        fullTitle: 'Estrategias Efectivas para Impulsar el Desarrollo Personal y Académico',
+        content: `
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-toolbar">
+                    <div class="pdf-toolbar-left">
+                        <i class="fa-solid fa-timeline" style="color:var(--accent-primary)"></i>
+                        <span>Semana 14 — Línea de Tiempo del Desarrollo Personal y Académico</span>
+                    </div>
+                    <div class="pdf-toolbar-right">
+                        <button class="pdf-btn" onclick="window.zoomTimeline(1.25)"><i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar</button>
+                        <button class="pdf-btn" onclick="window.zoomTimeline(0.8)"><i class="fa-solid fa-magnifying-glass-minus"></i> Reducir</button>
+                        <a href="assets/semana14.png" download class="pdf-btn"><i class="fa-solid fa-download"></i> Descargar</a>
+                        <a href="assets/semana14.png" target="_blank" class="pdf-btn"><i class="fa-solid fa-up-right-from-square"></i> Abrir</a>
+                    </div>
+                </div>
+                <div class="timeline-image-container" style="overflow: auto; max-height: 70vh; background: rgba(0,0,0,0.4); border-radius: 0 0 16px 16px; border: 1px solid var(--glass-border); padding: 2rem; text-align: center;">
+                    <img id="timelineImg" src="assets/semana14.png" alt="Línea de Tiempo" style="width: 70%; height: auto; transition: width 0.3s ease; min-width: 320px; max-width: 250%; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));">
+                </div>
+                <p class="pdf-note"><i class="fa-solid fa-circle-info"></i> Utiliza los botones de la barra de herramientas para ampliar o reducir la visualización de la línea de tiempo.</p>
+            </div>
+        `
     }
 };
 
@@ -383,6 +435,10 @@ let currentSlideIndex = 0;
 
 window.openModal = function (id) {
     const data = projectsData[id];
+
+    if (id === 'proj14') {
+        window.currentTimelineZoom = 70; // Reset default zoom percentage
+    }
 
     if (data.isSlideshow) {
         currentSlideIndex = 0;
@@ -611,4 +667,100 @@ memberCards.forEach(card => {
         }
     });
 });
+
+// ===== SWITCH ELEVATOR PITCH LOGIC =====
+window.switchPitch = function(memberId, btn) {
+    try {
+        console.log("switchPitch called for:", memberId);
+        // Remove active class from all buttons
+        document.querySelectorAll('.pitch-tab-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        
+        // Member details data mapping
+        const data = {
+            m2: {
+                name: 'Julian Enriquez Leyra Verenitse',
+                role: 'Mi rol es seguir mejorando, aprender cada día más y esforzarme por cumplir mis metas académicas con responsabilidad y dedicación.',
+                qualities: '💪 Perseverante  •  💞 Empática',
+                videoSrc: 'https://www.youtube.com/embed/g2GlIyOyuSA'
+            },
+            m3: {
+                name: 'Mata Quispe Francis Nicoll',
+                role: 'Mi rol es construir conocimiento mediante la reflexión y entregar a tiempo las evidencias.',
+                qualities: '✅ Responsable  •  🎯 Disciplinada',
+                videoSrc: 'https://drive.google.com/file/d/1D7tDjEs4LNbJQJnG8LR-hp1EvxaodMGR/preview'
+            },
+            m4: {
+                name: 'Mercado Quispe Grecia Giuliana',
+                role: 'Mi papel es aprender, crecer y cumplir con mis responsabilidades.',
+                qualities: '✅ Responsable  •  🤝 Comprometida',
+                videoSrc: 'https://drive.google.com/file/d/1l0TTwfa3Wl1QrFi0X-x5lpUOcDYP-SEr/preview'
+            },
+            m5: {
+                name: 'Mendivel Navarro Enmanuel de Jesus',
+                role: 'Mi rol es aprender, entender y cuestionar.',
+                qualities: '🤲 Solidario  •  💞 Empático',
+                videoSrc: 'https://drive.google.com/file/d/1dronSvng9IsGklpfFHczsYP_w4w8kClo/preview'
+            },
+            m6: {
+                name: 'Andrade la Madrid Ariana Samar',
+                role: 'Mi rol es aprender de manera constante, desarrollar mis habilidades y asumir con responsabilidad mis estudios.',
+                qualities: '⏰ Puntual  •  💞 Empática',
+                videoSrc: 'https://drive.google.com/file/d/1Yf-0wTtCsuwEHmF26NOxF0zTRhzqtR0O/preview'
+            }
+        };
+        
+        const member = data[memberId];
+        if (!member) {
+            console.warn("Member not found in data:", memberId);
+            return;
+        }
+        
+        const display = document.getElementById('activePitchDisplay');
+        if (!display) {
+            console.error("activePitchDisplay element not found!");
+            return;
+        }
+        
+        // Update name, role, qualities
+        const nameEl = display.querySelector('.pitch-member-name');
+        const roleEl = display.querySelector('.pitch-member-role');
+        const metaEl = display.querySelector('.pitch-meta');
+        
+        if (nameEl) nameEl.textContent = member.name;
+        if (roleEl) roleEl.textContent = `"${member.role}"`;
+        if (metaEl) metaEl.innerHTML = `<span><strong>Cualidades:</strong> ${member.qualities}</span>`;
+        
+        // Update video source / iframe container
+        const mediaContainer = display.querySelector('.pitch-media-container');
+        if (mediaContainer) {
+            if (member.videoSrc.startsWith('http')) {
+                mediaContainer.innerHTML = `<iframe src="${member.videoSrc}" style="width: 100%; height: 100%; border: none; aspect-ratio: 16/9; display: block;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            } else {
+                mediaContainer.innerHTML = `
+                    <video controls class="pitch-video-player" style="width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: cover;">
+                        <source src="${member.videoSrc}" type="video/mp4">
+                    </video>
+                `;
+            }
+        }
+        console.log("switchPitch completed successfully for:", memberId);
+    } catch (err) {
+        console.error("Error in switchPitch:", err);
+    }
+};
+
+// ===== ZOOM TIMELINE LOGIC =====
+window.currentTimelineZoom = 70;
+window.zoomTimeline = function(factor) {
+    const img = document.getElementById('timelineImg');
+    if (!img) return;
+    
+    if (factor > 1) {
+        window.currentTimelineZoom = Math.min(200, window.currentTimelineZoom + 20);
+    } else {
+        window.currentTimelineZoom = Math.max(30, window.currentTimelineZoom - 20);
+    }
+    img.style.width = `${window.currentTimelineZoom}%`;
+};
 
